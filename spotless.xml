@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spotless>
+  <java>
+    <!-- Use the default importOrder, but you can override it here -->
+    <importOrder />
+    
+    <!-- Use the default eclipse formatter, but you can override it here -->
+    <eclipse>
+      <file>eclipse-formatter.xml</file>
+    </eclipse>
+    
+    <!-- Remove unused imports -->
+    <removeUnusedImports />
+    
+    <!-- Apply license header -->
+    <licenseHeader>
+      <file>license-header.txt</file>
+    </licenseHeader>
+  </java>
+  
+  <!-- Apply to XML files -->
+  <xml>
+    <eclipse>
+      <file>eclipse-formatter.xml</file>
+    </eclipse>
+  </xml>
+  
+  <!-- Apply to properties files -->
+  <properties>
+    <eclipse>
+      <file>eclipse-formatter.xml</file>
+    </eclipse>
+  </properties>
+  
+  <!-- Apply to markdown files -->
+  <markdown>
+    <eclipse>
+      <file>eclipse-formatter.xml</file>
+    </eclipse>
+  </markdown>
+</spotless>

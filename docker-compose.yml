@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  polizas-service:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - QUARKUS_PROFILE=prod
+      - QUARKUS_DATASOURCE_JDBC_URL=jdbc:h2:mem:polizasdb;DB_CLOSE_DELAY=-1
+      - QUARKUS_DATASOURCE_USERNAME=sa
+      - QUARKUS_DATASOURCE_PASSWORD=password
+      - QUARKUS_LOG_LEVEL=INFO
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/health/live" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - polizas-network
+
+  # Optional: H2 Console for development
+  h2-console:
+    image: oscarfonts/h2
+    ports:
+      - "8082:81"
+    environment:
+      H2_OPTIONS: "-ifNotExists"
+    volumes:
+      - h2-data:/h2-data
+    networks:
+      - polizas-network
+    profiles:
+      - dev
+
+networks:
+  polizas-network:
+    driver: bridge
+
+volumes:
+  h2-data:
+    driver: local
+
+# Development profile with hot reload
+profiles:
+  dev:
+    services:
+      polizas-service:
+        build:
+          context: .
+          dockerfile: Dockerfile.dev
+        volumes:
+          - ./src:/app/src
+          - ./target:/app/target
+        environment:
+          - QUARKUS_PROFILE=dev
+          - QUARKUS_DEV=true
