@@ -343,9 +343,9 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👨‍💻 Autor
 
-**Desarrollador Backend** - [Tu Nombre]
-- **Email**: tu.email@ejemplo.com
-- **LinkedIn**: [Tu Perfil](https://linkedin.com/in/tu-perfil)
+**Desarrollador Backend** - Orlando Delgado
+- **Email**: lando.delgado89@gmail.com
+- **LinkedIn**: [Mi Perfil](https://www.linkedin.com/in/ojdelgado/)
 
 ---
 
