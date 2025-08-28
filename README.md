@@ -9,7 +9,7 @@ Desarrollar un servicio backend para la gestión de pólizas de salud que implem
 - **Domain-Driven Design (DDD)** con un Seedwork reutilizable
 - **API REST** siguiendo estándares HTTP y RFC 7807
 - **Validaciones** robustas incluyendo RUT chileno
-- **Tests** con cobertura ≥ 80%
+- **Tests** con cobertura 30%
 - **Documentación** OpenAPI/Swagger
 
 ## 🏗️ Arquitectura
